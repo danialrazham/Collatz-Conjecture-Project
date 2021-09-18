@@ -38,21 +38,21 @@ def counter():
 def collatz(i):
     if (i % 2) != 0:
         i = 3*i + 1
+        print('odd')
         print(i)
     else:
         i = i/2
+        print('even')
         print(i)
     return i
 
         
-for i in range(1,10):
+for i in range(1,11):
     print(f'Collatz for {i}'.format(i))
     collatz(i)
-    counter()
-    while i != 2:
-        collatz(i)
-        counter()
-    else:
-        print(f'collatz ends at {i} after {c} iterations')
+    while i != 2:               # for some reason, the i is never updated(?) when 1st collatz is run value 
+        collatz(i)                 # for i is 1, and when it is run in the  while loop its still 1?
+      
+
     
 
