@@ -9,7 +9,7 @@ def collatz(i):
         i = i/2
         print(i)
         c += 1
-    while i != 2:
+    while i != 1:
         if (i % 2) != 0:
             i = 3*i + 1
             c += 1
@@ -19,12 +19,14 @@ def collatz(i):
             c += 1
             print(i)
     print(f'The collatz function ends at {i} after {c} iterations')
-    return i
     
 for i in range(1,10):
+    max=0
     print(f'collatz for {i}'.format(i))
-    collatz(i)  
-
+    currentcollatz=collatz(i)
+    if currentcollatz > max:
+        max=currentcollatz  
+    print(max)
 
 
 
