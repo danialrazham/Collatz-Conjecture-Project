@@ -42,16 +42,23 @@ def collatz(i):
         i = i/2
         print(i)
     return i
+
+def maxCheck():
+    global max
+    if currentCollatz > max:
+        max = currentCollatz
+    return max
      
 for i in range(1,11):
+    max = 0
     c = 1
     print(f'Collatz for {i}'.format(i))
-    i = collatz(i)
-    while i != 1:
-        i = collatz(i)
+    currentCollatz = collatz(i)
+    while currentCollatz != 1:
+        currentCollatz = collatz(currentCollatz)
+        max = maxCheck()
         counter()
-    print(f'Collatz has ended at {i} after {c} iterations')
+    print(f'Collatz has ended at {currentCollatz} after {c} iterations with a maximum value of {max}')
       
 
     
-
