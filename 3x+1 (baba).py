@@ -27,16 +27,16 @@ def maxCheck():
 def drawGraph(x,y):
     global c
     global i
-    graph.plot(x,y,color='blue', linewidth=2,marker="o",markersize=5)
+    graph.plot(x,y,color='red', linewidth=2,marker="o",markersize=5)
     graph.xlabel("Input into Collatz")
+    #graph.ylabel("Max Number")
     graph.ylabel("Number of Iterations")
-    graph.title("Number of Iterations for each Collatz")
-    graph.ylim(0,20)
-    graph.xlim(0,10)
+    #graph.title("Max Numbers for each Collatz")
+    graph.title("Number of Iterations of each Collatz")
     graph.show()
 
 
-for i in range(1,11):
+for i in range(1,1000):
     max = 0
     c = 1
     x.append(i)
