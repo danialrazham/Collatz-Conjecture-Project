@@ -37,12 +37,13 @@ def drawGraph(x,y):
     graph.show()
 
 
-for i in range(1,21):
+for i in range(1,11):
     max = 0
     c = 1
     x.append(i)
     print(f'Collatz for {i}'.format(i))
     currentCollatz = collatz(i)
+    max = maxCheck()
     while currentCollatz != 1:
         currentCollatz = collatz(currentCollatz)
         max = maxCheck()
@@ -50,4 +51,5 @@ for i in range(1,21):
     y.append(max)
     print(f'Collatz has ended after {c} iterations with a maximum value of {max}')
 
+print(y)
 drawGraph(x,y)
