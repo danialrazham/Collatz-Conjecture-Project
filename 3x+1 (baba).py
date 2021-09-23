@@ -36,8 +36,22 @@ def drawGraph(x,y):
     #graph.title("Number of Iterations of each Collatz")
     graph.show()
 
+def PrimeCheck(li):
+    global y
+    global primes
+    for i in li:
+        if i > 1:
+            for d in range(2, i):
+                if (i % d) == 0:
+                    #print(f'{i} is not a prime')
+                    break
+                else:
+                    #print(f'{i} is a prime')
+                    primes.append(i)
+    return primes
 
-for i in range(1,11):
+
+for i in range(4000,4700):
     max = 0
     c = 1
     x.append(i)
@@ -52,4 +66,7 @@ for i in range(1,11):
     print(f'Collatz has ended after {c} iterations with a maximum value of {max}')
 
 print(y)
+lprimes = PrimeCheck(x)
+print('')
+print(lprimes)
 drawGraph(x,y)
