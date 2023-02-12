@@ -51,7 +51,7 @@ def PrimeCheck(li):
     return primes
 
 
-for i in range(4000,4700):
+for i in range(1,10):
     max = 0
     c = 1
     x.append(i)
